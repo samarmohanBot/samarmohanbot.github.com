@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    </head>
+    <body>
+        <div id="error">
+
+        </div>
+        <form id="form" method="GET">
+            <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="text">
+            </div>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+        <script>
+            const name = document.getElementById("name")
+            const password = document.getElementById("password")
+            const form = document.getElementById("form")
+            const errorElement = document.getElementById("error")
+            const submit = document.getElementById("submit")
+            
+            var preventSubmit = function() {
+                const messages = []
+                if (name.value === "" || name.value.length == null) {
+                    messages.push("Name is required")
+                }
+
+                if (password.value.length <= 6) {
+                    messages.push("Password must be longer than 6 characters")
+                }
+
+                if (password.value.length >= 20) {
+                    messages.push("Password must be shorter than 20 characters")
+                }
+
+                if (messages.length > 0) {
+                    errorElement.innerText = messages.join(", ")
+                } 
+                
+                if (messages.length === 0) {
+                     location.href = "cnn.com"
+                 }
+            }
+            submit.addEventListener("click", preventSubmit)
+            <a href="click-count.html>Click Count</a>
+            <a href="clicker.html>Clicker</a>
+            <a href="countdown.html>Countdown</a>
+        </script>
+    </body>
+</html>
