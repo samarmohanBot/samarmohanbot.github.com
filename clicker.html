@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clicker Game</title>
+    </head>
+    <body>
+        <h1>Click the button</h1>
+        <button id="button">Click me</button>
+        <div id="response"></div>
+        <script>
+            var button = document.getElementById('button');
+            var response = document.getElementById('response');
+            
+            var onClick = function () {
+                response.textContent = "Yay! you clicked"
+            }
+
+            button.addEventListener("click", onClick);
+        </script>
+    </body>
+</html>

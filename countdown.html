@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <h1>The world will end in <span id="countdown">5</span> seconds
+            </h1>
+        </div>
+        <script>
+             var prompt1 = prompt("r u phat? *Answer in all caps or all lowercase");
+            if (prompt1 === "yes" || prompt1 === "YES") {
+                    var countdown = document.getElementById("countdown");
+
+                    var countIdDown = function() {
+                        var currentTime = parseFloat(countdown.textContent);
+                        if (currentTime > 0) {
+                            countdown.textContent = parseFloat(countdown.textContent) - 1;
+                        } else {
+                            window.clearInterval(timer);
+                            document.body.innerHTML = "world has exploded";
+                        };
+                    };
+
+                    var timer = window.setInterval(countIdDown, 1000);
+                } else {
+                    document.body.innerHTML = "good job boi";
+                }; 
+        </script>
+    </body>
+</html>

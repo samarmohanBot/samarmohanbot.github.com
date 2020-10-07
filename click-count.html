@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="button">Click me</button>
+        <div>Number of clicks: <span id="number_of_clicks">0</span></div>
+        <script>
+            var button = document.getElementById('button');
+            var number_of_clicks = document.getElementById('number_of_clicks');
+            var clicks = 0;
+            var onClick = function() {
+                clicks++;
+                number_of_clicks.innerHTML = clicks;
+            };
+            button.addEventListener("click", onClick);
+        </script>
+    </body>
+</html>
